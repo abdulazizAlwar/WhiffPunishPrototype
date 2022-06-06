@@ -11,4 +11,9 @@ public abstract class FighterBase : MonoBehaviour
     public float WeaponSwingHoldDuration = 0.5f;
     protected float xRange = 7.5f;
 
+    void Awake()
+    {
+        weapon = transform.Find("Weapon").gameObject;
+    }
+
 }
