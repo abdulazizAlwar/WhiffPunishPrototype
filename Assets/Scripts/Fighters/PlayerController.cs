@@ -2,16 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : FighterBase
 {
-    GameObject weapon;
     public float horizontalInput;
-
-    public float moveSpeed = 5.0f;
-    public float dashSpeed = 50.0f;
-    public float WeaponSwingHoldDuration = 0.5f;
-    private float xRange = 7.5f;
-
 
     // Start is called before the first frame update
     void Start()
