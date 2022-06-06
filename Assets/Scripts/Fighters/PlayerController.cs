@@ -7,10 +7,6 @@ public class PlayerController : FighterBase
     public float horizontalInput;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        weapon = transform.Find("Weapon").gameObject;
-    }
 
     // Update is called once per frame
     void Update()
