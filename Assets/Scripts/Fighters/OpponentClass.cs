@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class OpponentClass : FighterBase
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void MovementController()
     {
-        
+        throw new System.NotImplementedException();
     }
-
-    // Update is called once per frame
-    void Update()
+    protected override void DashController()
     {
-        
+        throw new System.NotImplementedException();
     }
 }

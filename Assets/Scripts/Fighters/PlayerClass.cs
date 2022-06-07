@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PlayerClass : FighterBase
 {
-    // Start is called before the first frame update
-    void Start()
+    protected bool BackDashInput;
+    protected bool ForwardDashInput;
+
+    protected override void MovementController()
     {
-        
+        HorizontalMovement = Input.GetAxis("Horizontal");
+        MovementAction();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void DashController()
     {
-        
+        BackDashInput = Input.GetKeyDown(KeyCode.O) && HorizontalMovement > 0;
+        ForwardDashInput = Input.GetKeyDown(KeyCode.O) && HorizontalMovement <= 0;
+
+        if (BackDashInput)
+        {
+            BackDashAction();
+        }
+        if (ForwardDashInput)
+        {
+            ForwardDashAction();
+        }
     }
 }
