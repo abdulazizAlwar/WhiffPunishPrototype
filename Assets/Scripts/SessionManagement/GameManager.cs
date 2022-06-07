@@ -6,7 +6,22 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Color PlayerColor;
+    private Color prv_PlayerColor;
+    public Color PlayerColor
+    {
+        get { return prv_PlayerColor; }
+        private set
+        {
+            if (value == Color.clear)
+            {
+                print("Can't use this color");
+            }
+            else
+            {
+                prv_PlayerColor = value;
+            }
+        }
+    }
 
     private void Awake()
     {

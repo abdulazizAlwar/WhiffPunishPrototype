@@ -12,4 +12,9 @@ public class OpponentClass : FighterBase
     {
         throw new System.NotImplementedException();
     }
+
+    protected override void WeaponAttackController()
+    {
+        throw new System.NotImplementedException();
+    }
 }

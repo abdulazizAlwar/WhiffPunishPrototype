@@ -30,6 +30,7 @@ public abstract class FighterBase : MonoBehaviour
     //Opponent: Opponent AI
     protected abstract void MovementController();
     protected abstract void DashController();
+    protected abstract void WeaponAttackController();
 
     public void MovementAction()
     {
@@ -44,6 +45,13 @@ public abstract class FighterBase : MonoBehaviour
     protected void BackDashAction()
     {
         transform.Translate(Vector3.right * dashSpeed / 60);
+    }
+
+    protected IEnumerator WeaponSwingHoldRoutine()
+    {
+        weapon.transform.localPosition = new Vector3(-1.5f, 0, 0.5f);
+        yield return new WaitForSeconds(WeaponSwingHoldDuration);
+        weapon.transform.localPosition = new Vector3(-1f, 0, 0.5f);
     }
 
     void BoundryRangeReset()

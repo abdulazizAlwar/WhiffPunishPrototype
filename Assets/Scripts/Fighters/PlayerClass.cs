@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class PlayerClass : FighterBase
 {
+    public Color PlayerColor;
+
     protected bool BackDashInput;
     protected bool ForwardDashInput;
+    protected bool WeaponAttackInput;
+
+    private void Start()
+    {
+        SetColor();
+    }
+
+    void SetColor()
+    {
+        PlayerColor = GameManager.Instance.PlayerColor;
+        Material material = transform.Find("Rye").Find("ma").Find("MA Body 2").GetComponent<Renderer>().material;
+        material.color = PlayerColor;
+    }
 
     protected override void MovementController()
     {
@@ -27,4 +42,15 @@ public class PlayerClass : FighterBase
             ForwardDashAction();
         }
     }
+
+    protected override void WeaponAttackController()
+    {
+        WeaponAttackInput = Input.GetKeyDown(KeyCode.P);
+
+        if (WeaponAttackInput)
+        {
+            StartCoroutine(WeaponSwingHoldRoutine());
+        }
+    }
+
 }
