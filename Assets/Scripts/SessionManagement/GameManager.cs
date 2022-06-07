@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Color prv_PlayerColor;
     public Color PlayerColor
     {
+        // ENCAPSULATION
         get { return prv_PlayerColor; }
         private set
         {

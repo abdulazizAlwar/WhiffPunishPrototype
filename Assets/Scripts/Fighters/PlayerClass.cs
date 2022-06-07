@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class PlayerClass : FighterBase
 {
     public Color PlayerColor;
@@ -22,6 +23,7 @@ public class PlayerClass : FighterBase
         material.color = PlayerColor;
     }
 
+    // POLYMORPHISM
     protected override void MovementController()
     {
         HorizontalMovement = Input.GetAxis("Horizontal");

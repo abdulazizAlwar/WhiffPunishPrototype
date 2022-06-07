@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public abstract class FighterBase : MonoBehaviour
 {
     protected GameObject weapon;
@@ -28,15 +29,19 @@ public abstract class FighterBase : MonoBehaviour
     //Override below controllers based on class:
     //Player: Player input
     //Opponent: Opponent AI
+
+    // POLYMORPHISM
     protected abstract void MovementController();
     protected abstract void DashController();
     protected abstract void WeaponAttackController();
 
+    // ABSTRACTION
     public void MovementAction()
     {
         transform.Translate(Vector3.right * HorizontalMovement * moveSpeed / 60);
     }
 
+    // ABSTRACTION
     protected void ForwardDashAction()
     {
         transform.Translate(Vector3.left * dashSpeed / 60);
